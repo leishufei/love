@@ -1,7 +1,8 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>给你的一封信</title>	    
+		<title>给我最爱的女孩</title>	    
         <link type="text/css" rel="stylesheet" href="./file/default.css">
+		<script type="text/javascript" src="./file/config.js"></script>
 		<script type="text/javascript" src="./file/jquery.min.js"></script>
 		<script type="text/javascript" src="./file/jscex.min.js"></script>
 		<script type="text/javascript" src="./file/jscex-parser.js"></script>
@@ -13,6 +14,39 @@
 		<script type="text/javascript" src="./file/love.js" charset="utf-8"></script>
 	    <style type="text/css">
         </style>
+        <style type="text/css">
+            .code {
+                text-shadow: 1px 1px 2px rgba(255, 192, 203, 0.3); /* 添加粉红色文字阴影 */
+            }
+            .line {
+                color: #FF69B4 !important; /* 将纯红改为粉红色 */
+                font-size: 1.1em;
+                line-height: 1.8;
+                transition: color 0.5s;
+            }
+            .line:hover {
+                color: #FF1493 !important; /* 悬停时变为深粉色 */
+                font-weight: bold;
+            }
+            #clock-box {
+                color: #FFB6C1 !important; /* 浅粉色 */
+                text-shadow: 0 0 5px rgba(255, 105, 180, 0.3);
+            }
+            .STYLE1 {
+                color: #FFC0CB !important; /* 粉白色 */
+            }
+            #clock {
+                color: #FF69B4 !important; /* 与主文字统一 */
+                font-size: 1.5em;
+                text-shadow: 0 0 10px rgba(255, 20, 147, 0.3);
+            }
+            /* 添加渐变效果 */
+            @keyframes text-glow {
+                0% { text-shadow: 0 0 5px #FF69B4; }
+                50% { text-shadow: 0 0 15px #FF1493; }
+                100% { text-shadow: 0 0 5px #FF69B4; }
+            }
+        </style>
 </head>
     <body>
         <div id="main">
@@ -23,30 +57,54 @@
             </audio>
             <div id="wrap">
                 <div id="text">
-                    <div id="code"> <font color="#FF0000"> <span class="say">亲爱的宝宝，我爱你</span><br>
-                      <span class="say"> 我知道我不会甜言蜜语，</span><br>
-                      <span class="say"> 但是我会用行动证明一切</span><br>
-                      <span class="say">你说我啰嗦，</span><br>             
-                          <span class="say"> 有些东西因为越在乎所以越怕失去</span><br>
-                      <span class="say">因为我太爱你了，所以我害怕失去你</span><br>
-                      <span class="say">因为我太爱你了，所以我对你总啰嗦</span><br>
-                      <span class="say">希望可以执子之手，与子偕老</span><br>
-                      <span class="say">如果上天让我许三个愿望，</span><br>
-                              <span class="say">第一个是今生今世和你在一起， </span><br>
-                           <span class="say"> 第二个是再生再世和你在一起，</span><br>
-                           <span class="say">第三个是永生永世和你不分离 </span><br>
-                      <span class="say"><span class="space"></span> -- 爱你的老公</span> </font>
-                          <br />
-                          <br />
-                      </p>
+                    <div class="code">
+                        <span class="line">今天是一个特别的日子，</span><br>
+                        <span class="line">我想借着这个充满爱意的时刻，</span><br>
+                        <span class="line">写下对你的告白。</span><br>
+                        <br>
+                        <span class="line">有人说，</span><br>
+                        <span class="line">两个人相遇的概率只有十万分之一，</span><br>
+                        <span class="line">而我何其幸运，</span><br>
+                        <span class="line">在这微小的概率中遇见了你。</span><br>
+                        <br>
+                        <span class="line">与你相处的每一分每一秒，</span><br>
+                        <span class="line">都像被时光温柔地包裹，</span><br>
+                        <span class="line">让我感受到从未有过的幸福。</span><br>
+                        <br>
+                        <span class="line">你曾说过，</span><br>
+                        <span class="line">我或许不是最好的，</span><br>
+                        <span class="line">但有了我，</span><br>
+                        <span class="line">比什么都好。</span><br>
+                        <span class="line">我想告诉你，</span><br>
+                        <span class="line">正是因为有了你，</span><br>
+                        <span class="line">我的世界才变得完整。</span><br>
+                        <br>
+                        <span class="line">我想把这世间所有的美好都捧到你面前，</span><br>
+                        <span class="line">让你知道，</span><br>
+                        <span class="line">你值得一切最好的。</span><br>
+                    </div>
+                  </div>
+                  <div id="text2">
+                    <div class="code">
+                        <span class="line">我不擅长说甜言蜜语，</span><br>
+                        <span class="line">但每一句话都发自内心。</span><br>
+                        <span class="line">我真的很爱你，</span><br>
+                        <span class="line">比你能想象的还要爱。</span><br>
+                        <br>
+                        <span class="line">未来的路，</span><br>
+                        <span class="line">我想和你一起走下去，</span><br>
+                        <span class="line">无论是晴空万里，</span><br>
+                        <span class="line">还是风雨交加，</span><br>
+                        <span class="line">我都愿意与你分享每一个喜怒哀乐，</span><br>
+                        <span class="line">携手走过人生的每一个春夏秋冬。</span><br>
+                        <span class="line"><span class="space"></span> ——爱你的大男孩</span>
                     </div>
                   </div>
                 <div id="clock-box">
-                    <span class="STYLE1"></span><font color="#33CC00">亲爱的，我喜欢你</font>
-<span class="STYLE1">已经是……</span>
+                    <span class="STYLE1">这是我们在一起的</span>
                   <div id="clock"></div>
               </div>
-                <canvas id="canvas" width="1100" height="680"></canvas>
+            <canvas id="canvas" width="1100" height="680"></canvas>
             </div>
             
         </div>
@@ -60,20 +118,21 @@
 		
         if (!canvas[0].getContext) {
             $("#error").show();
-            return false;        }
+            return false;        
+        }
 
+        canvas.attr("width", window.config.canvasWidth);
+        canvas.attr("height", window.config.canvasHeight);
         var width = canvas.width();
-        var height = canvas.height();        
-        canvas.attr("width", width);
-        canvas.attr("height", height);
+        var height = canvas.height();
         var opts = {
             seed: {
-                x: width / 2 - 20,
-                color: "rgb(190, 26, 37)",
+                x: width / 2,
+                color: "#FF69B4",
                 scale: 2
             },
             branch: [
-                [535, 680, 570, 250, 500, 200, 30, 100, [
+                [535, window.config.canvasHeight, 570, 250, 500, 200, 30, 100, [
                     [540, 500, 455, 417, 340, 400, 13, 100, [
                         [450, 435, 434, 430, 394, 395, 2, 40]
                     ]],
@@ -91,7 +150,7 @@
                 ]] 
             ],
             bloom: {
-                num: 700,
+                num: 800,
                 width: 1080,
                 height: 650,
             },
@@ -124,41 +183,45 @@
             canvas.toggleClass('hand', seed.hover(x, y));
         });
 
-        var seedAnimate = eval(Jscex.compile("async", function () {
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function seedAnimate () {
             seed.draw();
             while (hold) {
-                $await(Jscex.Async.sleep(10));
+                await sleep(10);
             }
             while (seed.canScale()) {
                 seed.scale(0.95);
-                $await(Jscex.Async.sleep(10));
+                await sleep(10);
             }
             while (seed.canMove()) {
-                seed.move(0, 2);
+                seed.move(0, 5);
                 foot.draw();
-                $await(Jscex.Async.sleep(10));
+                await sleep(10);
             }
-        }));
+        };
 
-        var growAnimate = eval(Jscex.compile("async", function () {
+        async function growAnimate () {
             do {
     	        tree.grow();
-                $await(Jscex.Async.sleep(10));
+                await sleep(10);
             } while (tree.canGrow());
-        }));
+        };
 
-        var flowAnimate = eval(Jscex.compile("async", function () {
+        async function flowAnimate () {
             do {
     	        tree.flower(2);
-                $await(Jscex.Async.sleep(10));
+                await sleep(10);
             } while (tree.canFlower());
-        }));
+        };
 
-        var moveAnimate = eval(Jscex.compile("async", function () {
-            tree.snapshot("p1", 240, 0, 610, 680);
+        async function moveAnimate () {
+            tree.snapshot("p1", 240, 0, 610, window.config.canvasHeight);
             while (tree.move("p1", 500, 0)) {
                 foot.draw();
-                $await(Jscex.Async.sleep(10));
+                await sleep(10);
             }
             foot.draw();
             tree.snapshot("p2", 500, 0, 610, 680);
@@ -166,47 +229,47 @@
             // 会有闪烁不得意这样做, (＞﹏＜)
             canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
             canvas.css("background", "#ffe");
-            $await(Jscex.Async.sleep(300));
+            await sleep(300);
             canvas.css("background", "none");
-        }));
+        };
 
-        var jumpAnimate = eval(Jscex.compile("async", function () {
+        async function jumpAnimate () {
             var ctx = tree.ctx;
             while (true) {
                 tree.ctx.clearRect(0, 0, width, height);
                 tree.jump();
                 foot.draw();
-                $await(Jscex.Async.sleep(25));
+                await sleep(25);
             }
-        }));
+        };
 
-        var textAnimate = eval(Jscex.compile("async", function () {
+        async function textAnimate () {
 		    var together = new Date();
-		    together.setFullYear(2010,1 , 15); 			//时间年月日
-		    together.setHours(16);						//小时	
-		    together.setMinutes(53);					//分钟
-		    together.setSeconds(0);					//秒前一位
-		    together.setMilliseconds(2);				//秒第二位
+		    together.setFullYear(window.config.startYear, window.config.startMonth, window.config.startDay); 			//时间年月日
+		    together.setHours(0);
+		    together.setMinutes(0);
+		    together.setSeconds(0);
+		    together.setMilliseconds(2);
 
-		    $("#code").show().typewriter();
+            $("#text > .code").show().typewriter().then(() => {
+                return $("#text2 > .code").show().typewriter();
+            }).then(() => {});
             $("#clock-box").fadeIn(500);
             while (true) {
                 timeElapse(together);
-                $await(Jscex.Async.sleep(1000));
+                await sleep(1000);
             }
-        }));
+        };
 
-        var runAsync = eval(Jscex.compile("async", function () {
-            $await(seedAnimate());
-            $await(growAnimate());
-            $await(flowAnimate());
-            $await(moveAnimate());
+        async function runAsync () {
+            await seedAnimate();
+            await growAnimate();
+            await flowAnimate();
+            await moveAnimate();
+            await textAnimate();
+            await jumpAnimate();
+        };
 
-            textAnimate().start();
-
-            $await(jumpAnimate());
-        }));
-
-        runAsync().start();
+        runAsync();
     })();
     </script></body></html>

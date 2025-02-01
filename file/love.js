@@ -101,7 +101,7 @@
             this.cirle.point = this.cirle.point.add(new Point(x, y));
         },
         canMove: function() {
-            return this.cirle.point.y < (this.tree.height + 20); 
+            return (this.cirle.point.y - this.cirle.radius) < (this.tree.height + 20); 
         },
         move: function(x, y) {
             this.clear();
@@ -169,7 +169,7 @@
             ctx.moveTo(0, 0);
             ctx.scale(0.75, 0.75);
             ctx.font = "12px 微软雅黑,Verdana"; // 字号肿么没有用? (ˉ(∞)ˉ)
-            ctx.fillText("Come Baby", 23, 10);
+            ctx.fillText(window.config.tipText, 23, 10);
             ctx.restore();
         },
         clear: function() {
