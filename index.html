@@ -38,7 +38,7 @@
         >)或者火狐(<a href="http://firefox.com.cn/download/">Firefox</a
         >)浏览器，或者其他游览器的最新版本。
       </div>
-      <audio autoplay="autoplay" height="100" width="100">
+      <audio autoplay="autoplay" height="100" width="100" muted>
         <source src="renxi.mp3" type="audio/mp3" />
         <embed height="100" width="100" src="renxi.mp3" />
       </audio>
@@ -82,8 +82,8 @@
             <span class="line">我想和你一起走下去，</span><br />
             <span class="line">无论是晴空万里，</span><br />
             <span class="line">还是风雨交加，</span><br />
-            <span class="line">我都愿意与你分享每一个喜怒哀乐，</span><br />
-            <span class="line">携手走过人生的每一个春夏秋冬。</span><br />
+            <span class="line">我都愿意与你分享每一份喜怒哀乐，</span><br />
+            <span class="line">携手走过每一个春夏秋冬。</span><br />
             <span class="line"><span class="space"></span> ——爱你的大男孩</span>
           </div>
         </div>
@@ -179,7 +179,7 @@
             ],
           ],
           bloom: {
-            num: 800,
+            num: 1000,
             width: 1080,
             height: 650,
           },
@@ -262,12 +262,12 @@
           tree.snapshot("p2", 500, 0, 610, 680);
 
           // 会有闪烁不得意这样做, (＞﹏＜)
-          canvas
-            .parent()
-            .css("background", "url(" + tree.toDataURL("image/png") + ")");
-          canvas.css("background", "#ffe");
-          await sleep(300);
-          canvas.css("background", "none");
+          // canvas
+          //   .parent()
+          //   .css("background", "url(" + tree.toDataURL("image/png") + ")");
+          // canvas.css("background", "#ffe");
+          // await sleep(300);
+          // canvas.css("background", "none");
         }
 
         async function jumpAnimate() {
