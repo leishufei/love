@@ -1,323 +1,183 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>致我最爱的女孩</title>
-    <link type="text/css" rel="stylesheet" href="./file/default.css" />
-    <script type="text/javascript" src="./file/config.js"></script>
-    <script type="text/javascript" src="./file/jquery.min.js"></script>
-    <script type="text/javascript" src="./file/jscex.min.js"></script>
-    <script type="text/javascript" src="./file/jscex-parser.js"></script>
-    <script type="text/javascript" src="./file/jscex-jit.js"></script>
-    <script
-      type="text/javascript"
-      src="./file/jscex-builderbase.min.js"
-    ></script>
-    <script type="text/javascript" src="./file/jscex-async.min.js"></script>
-    <script
-      type="text/javascript"
-      src="./file/jscex-async-powerpack.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="./file/functions.js"
-      charset="utf-8"
-    ></script>
-    <script
-      type="text/javascript"
-      src="./file/love.js"
-      charset="utf-8"
-    ></script>
-  </head>
-  <body>
-    <div id="main">
-      <div id="error">
-        本页面采用HTML5编辑，目前您的浏览器无法显示，请换成谷歌(<a
-          href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI"
-          >Chrome</a
-        >)或者火狐(<a href="http://firefox.com.cn/download/">Firefox</a
-        >)浏览器，或者其他游览器的最新版本。
-      </div>
-      <audio autoplay="autoplay" height="100" width="100">
-        <source src="renxi.mp3" type="audio/mp3" />
-        <embed height="100" width="100" src="renxi.mp3" />
-      </audio>
-      <div id="wrap">
-        <div id="text">
-          <div class="code">
-            <span class="line">今天是一个特别的日子，</span><br />
-            <span class="line">我想借着这个充满爱意的时刻，</span><br />
-            <span class="line">写下对你的告白。</span><br />
-            <br />
-            <span class="line">有人说，</span><br />
-            <span class="line">两个人相遇的概率只有十万分之一，</span><br />
-            <span class="line">而我何其幸运，</span><br />
-            <span class="line">在这微小的概率中遇见了你。</span><br />
-            <br />
-            <span class="line">与你相处的每一分每一秒，</span><br />
-            <span class="line">都像被时光温柔地包裹，</span><br />
-            <span class="line">让我感受到从未有过的幸福。</span><br />
-            <br />
-            <span class="line">你曾说过，</span><br />
-            <span class="line">我或许不是最好的，</span><br />
-            <span class="line">但有了我，</span><br />
-            <span class="line">比什么都好。</span><br />
-            <span class="line">我想告诉你，</span><br />
-            <span class="line">正是因为有了你，</span><br />
-            <span class="line">我的世界才变得完整。</span><br />
-            <br />
-            <span class="line">我想把这世间所有的美好都捧到你面前，</span><br />
-            <span class="line">让你知道，</span><br />
-            <span class="line">你值得一切最好的。</span><br />
-          </div>
-        </div>
-        <div id="text2">
-          <div class="code">
-            <span class="line">我不擅长说甜言蜜语，</span><br />
-            <span class="line">但每一句话都发自内心。</span><br />
-            <span class="line">我真的很爱你，</span><br />
-            <span class="line">比你能想象的还要爱。</span><br />
-            <br />
-            <span class="line">未来的路，</span><br />
-            <span class="line">我想和你一起走下去，</span><br />
-            <span class="line">无论是晴空万里，</span><br />
-            <span class="line">还是风雨交加，</span><br />
-            <span class="line">我都愿意与你分享每一份喜怒哀乐，</span><br />
-            <span class="line">携手走过每一个春夏秋冬。</span><br />
-            <span class="line"><span class="space"></span> ——爱你的大男孩</span>
-          </div>
-        </div>
-        <div id="clock-box">
-          <span class="STYLE1">这是我们在一起的</span>
-          <div id="clock"></div>
-        </div>
-        <canvas id="canvas" width="1100" height="680"></canvas>
-      </div>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>密集向上浮现的文字动画</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #fff0f5; /* 更柔和的粉色背景 */
+            position: relative;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .floating-text {
+            position: absolute;
+            bottom: -50px; /* 从屏幕外开始 */
+            color: #ff1493; /* 深粉色 */
+            font-weight: bold;
+            white-space: nowrap;
+            animation: floatUp linear forwards;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+            z-index: 1;
+            opacity: 0.9;
+            pointer-events: none; /* 防止文字干扰点击 */
+        }
+        
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-110vh) rotate(5deg);
+                opacity: 0;
+            }
+        }
+        
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            display: flex;
+            gap: 10px;
+            background-color: rgba(255,255,255,0.7);
+            padding: 10px;
+            border-radius: 20px;
+        }
+        
+        button {
+            padding: 8px 16px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        button:hover {
+            background-color: #ff1493;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+	<!--
+    <div class="controls">
+        <button id="startBtn"></button>
+        <button id="stopBtn"></button>
+        <button id="intenseBtn"></button>
     </div>
-
-    <script></script>
+	-->
 
     <script>
-      (function () {
-        var canvas = $("#canvas");
-
-        if (!canvas[0].getContext) {
-          $("#error").show();
-          return false;
+        // 文字内容数组 - 添加了更多爱心和浪漫词汇
+        const messages = [
+            "❤️", "💖", "💗", "💘", "💝", "💞", "💕", "💓",
+			"文文",
+            "想你啦", "喜欢你", "爱你", "么么哒", "好想你", 
+            "甜蜜", "开心", "幸福", "😘", "🥰", "💋", "💌",
+            "唯一", "恋你", "牵挂", "钟情"
+        ];
+        
+        let animationInterval;
+        let creationSpeed = 200; // 默认每200毫秒创建一个新文字
+        const startBtn = document.getElementById('startBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const intenseBtn = document.getElementById('intenseBtn');
+        
+        // 创建浮动文字元素
+        function createFloatingText() {
+            const textElement = document.createElement('div');
+            textElement.className = 'floating-text';
+            
+            // 随机选择文字
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            textElement.textContent = randomMessage;
+            
+            // 随机大小 (8px 到 48px) - 范围更大
+            const randomSize = 8 + Math.random() * 40;
+            textElement.style.fontSize = `${randomSize}px`;
+            
+            // 随机水平位置 (屏幕宽度的5%到95%)
+            const randomLeft = 5 + Math.random() * 90;
+            textElement.style.left = `${randomLeft}%`;
+            
+            // 随机动画持续时间 (4s 到 12s)
+            const randomDuration = 4 + Math.random() * 8;
+            textElement.style.animationDuration = `${randomDuration}s`;
+            
+            // 轻微随机旋转 (-10deg 到 10deg)
+            const randomRotate = -10 + Math.random() * 20;
+            textElement.style.setProperty('--rotate', `${randomRotate}deg`);
+            
+            // 随机颜色 (粉色系)
+            const colors = ['#ff1493', '#ff69b4', '#db7093', '#ff6b9d', '#ff8fab'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            textElement.style.color = randomColor;
+            
+            // 添加到body
+            document.body.appendChild(textElement);
+            
+            // 动画结束后移除元素
+            textElement.addEventListener('animationend', function() {
+                textElement.remove();
+            });
         }
-
-        canvas.attr("width", window.config.canvasWidth);
-        canvas.attr("height", window.config.canvasHeight);
-        var width = canvas.width();
-        var height = canvas.height();
-        var opts = {
-          seed: {
-            x: width / 2,
-            color: "#FF69B4",
-            scale: 2,
-          },
-          branch: [
-            [
-              535,
-              window.config.canvasHeight,
-              570,
-              250,
-              500,
-              200,
-              30,
-              100,
-              [
-                [
-                  540,
-                  500,
-                  455,
-                  417,
-                  340,
-                  400,
-                  13,
-                  100,
-                  [[450, 435, 434, 430, 394, 395, 2, 40]],
-                ],
-                [
-                  550,
-                  445,
-                  600,
-                  356,
-                  680,
-                  345,
-                  12,
-                  100,
-                  [[578, 400, 648, 409, 661, 426, 3, 80]],
-                ],
-                [539, 281, 537, 248, 534, 217, 3, 40],
-                [
-                  546,
-                  397,
-                  413,
-                  247,
-                  328,
-                  244,
-                  9,
-                  80,
-                  [
-                    [427, 286, 383, 253, 371, 205, 2, 40],
-                    [498, 345, 435, 315, 395, 330, 4, 60],
-                  ],
-                ],
-                [
-                  546,
-                  357,
-                  608,
-                  252,
-                  678,
-                  221,
-                  6,
-                  100,
-                  [[590, 293, 646, 277, 648, 271, 2, 80]],
-                ],
-              ],
-            ],
-          ],
-          bloom: {
-            num: 1000,
-            width: 1080,
-            height: 650,
-          },
-          footer: {
-            width: 1200,
-            height: 5,
-            speed: 10,
-          },
-        };
-
-        var tree = new Tree(canvas[0], width, height, opts);
-        var seed = tree.seed;
-        var foot = tree.footer;
-        var hold = 1;
-
-        canvas
-          .click(function (e) {
-            var offset = canvas.offset(),
-              x,
-              y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            if (seed.hover(x, y)) {
-              hold = 0;
-              canvas.unbind("click");
-              canvas.unbind("mousemove");
-              canvas.removeClass("hand");
-              $("audio")[0].play();
+        
+        // 开始动画
+        function startAnimation() {
+            stopAnimation();
+            animationInterval = setInterval(createFloatingText, creationSpeed);
+            // 立即创建几个文字让效果更明显
+            for(let i = 0; i < 10; i++) {
+                setTimeout(createFloatingText, i * 100);
             }
-          })
-          .mousemove(function (e) {
-            var offset = canvas.offset(),
-              x,
-              y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            canvas.toggleClass("hand", seed.hover(x, y));
-          });
-
-        function sleep(ms) {
-          return new Promise((resolve) => setTimeout(resolve, ms));
         }
-
-        async function seedAnimate() {
-          seed.draw();
-          while (hold) {
-            await sleep(10);
-          }
-          while (seed.canScale()) {
-            seed.scale(0.95);
-            await sleep(10);
-          }
-          while (seed.canMove()) {
-            seed.move(0, 5);
-            foot.draw();
-            await sleep(10);
-          }
+        
+        // 停止动画
+        function stopAnimation() {
+            clearInterval(animationInterval);
         }
-
-        async function growAnimate() {
-          do {
-            tree.grow();
-            await sleep(10);
-          } while (tree.canGrow());
+        
+        // 密集模式
+        function setIntenseMode() {
+            creationSpeed = 80; // 每80毫秒创建一个新文字
+            startAnimation();
+            intenseBtn.textContent = "超密集模式";
+            intenseBtn.onclick = setSuperIntenseMode;
         }
-
-        async function flowAnimate() {
-          do {
-            tree.flower(2);
-            await sleep(10);
-          } while (tree.canFlower());
+        
+        // 超密集模式
+        function setSuperIntenseMode() {
+            creationSpeed = 30; // 每30毫秒创建一个新文字
+            startAnimation();
+            intenseBtn.textContent = "普通密集";
+            intenseBtn.onclick = setIntenseMode;
         }
-
-        async function moveAnimate() {
-          tree.snapshot("p1", 240, 0, 610, window.config.canvasHeight);
-          while (tree.move("p1", 500, 0)) {
-            foot.draw();
-            await sleep(10);
-          }
-          foot.draw();
-          tree.snapshot("p2", 500, 0, 610, 680);
-
-          // 会有闪烁不得意这样做, (＞﹏＜)
-          // canvas
-          //   .parent()
-          //   .css("background", "url(" + tree.toDataURL("image/png") + ")");
-          // canvas.css("background", "#ffe");
-          // await sleep(300);
-          // canvas.css("background", "none");
-        }
-
-        async function jumpAnimate() {
-          var ctx = tree.ctx;
-          while (true) {
-            tree.ctx.clearRect(0, 0, width, height);
-            tree.jump();
-            foot.draw();
-            await sleep(25);
-          }
-        }
-
-        async function textAnimate() {
-          var together = new Date();
-          together.setFullYear(
-            window.config.startYear,
-            window.config.startMonth,
-            window.config.startDay
-          ); //时间年月日
-          together.setHours(0);
-          together.setMinutes(0);
-          together.setSeconds(0);
-          together.setMilliseconds(2);
-
-          $("#text > .code")
-            .show()
-            .typewriter()
-            .then(() => {
-              return $("#text2 > .code").show().typewriter();
-            })
-            .then(() => {});
-          $("#clock-box").fadeIn(500);
-          while (true) {
-            timeElapse(together);
-            await sleep(1000);
-          }
-        }
-
-        async function runAsync() {
-          await seedAnimate();
-          await growAnimate();
-          await flowAnimate();
-          await moveAnimate();
-          await textAnimate();
-          await jumpAnimate();
-        }
-
-        runAsync();
-      })();
+        
+        // 按钮事件监听
+        // startBtn.addEventListener('click', startAnimation);
+        // stopBtn.addEventListener('click', stopAnimation);
+        // intenseBtn.addEventListener('click', setIntenseMode);
+		setSuperIntenseMode();
+        
+        // 页面加载后自动开始
+        window.addEventListener('load', function() {
+            startAnimation();
+            // 预加载一些文字
+            for(let i = 0; i < 20; i++) {
+                setTimeout(createFloatingText, i * 50);
+            }
+        });
     </script>
-  </body>
+</body>
 </html>
