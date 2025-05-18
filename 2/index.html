@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #fff0f5;
+            position: relative;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .floating-text {
+            position: absolute;
+            bottom: -50px;
+            color: #ff1493;
+            font-weight: bold;
+            white-space: nowrap;
+            animation: floatUp linear forwards;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+            z-index: 1;
+            opacity: 0.9;
+            pointer-events: none;
+            will-change: transform;
+        }
+        
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-110vh) rotate(5deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // 文字内容数组
+        const messages = [
+            "❤️", "💖", "💗", "💘", "💝", "💞", "💕", "💓",
+            "想你", "喜欢你", "爱你", "么么哒", "好想你", 
+            "甜蜜", "开心", "幸福", "😘", "🥰", "💋", "💌",
+            "心动", "珍惜", "唯一", "恋你", "牵挂", "钟情"
+        ];
+        
+        // 创建测量用的隐藏元素
+        const measureSpan = document.createElement('span');
+        measureSpan.style.visibility = 'hidden';
+        measureSpan.style.position = 'absolute';
+        measureSpan.style.whiteSpace = 'nowrap';
+        document.body.appendChild(measureSpan);
+        
+        // 创建浮动文字元素（边界检查版）
+        function createFloatingText() {
+            // 一次性创建3个文字
+            for (let i = 0; i < 3; i++) {
+                const textElement = document.createElement('div');
+                textElement.className = 'floating-text';
+                
+                // 随机选择文字
+                const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+                textElement.textContent = randomMessage;
+                
+                // 随机大小 (8px 到 50px)
+                const randomSize = 8 + Math.random() * 42;
+                textElement.style.fontSize = `${randomSize}px`;
+                
+                // 测量文字宽度
+                measureSpan.style.fontSize = `${randomSize}px`;
+                measureSpan.innerText = randomMessage;
+                const textWidth = measureSpan.offsetWidth;
+                
+                // 计算位置（确保不超出边界）
+                const maxLeft = window.innerWidth - textWidth;
+                const randomLeft = maxLeft > 0 ? Math.random() * maxLeft : 0;
+                textElement.style.left = `${randomLeft}px`;
+                
+                // 随机动画持续时间 (4s 到 7s)
+                const randomDuration = 4 + Math.random() * 3;
+                textElement.style.animationDuration = `${randomDuration}s`;
+                
+                // 随机旋转 (-10deg 到 10deg)
+                const randomRotate = -10 + Math.random() * 20;
+                textElement.style.transform = `rotate(${randomRotate}deg)`;
+                
+                // 随机颜色
+                const hue = 330 + Math.random() * 30;
+                textElement.style.color = `hsl(${hue}, 100%, 65%)`;
+                
+                document.body.appendChild(textElement);
+                
+                // 动画结束后移除元素
+                textElement.addEventListener('animationend', function() {
+                    textElement.remove();
+                });
+            }
+        }
+        
+        // 自动开始动画（每80毫秒创建一组）
+		const interval = 80;
+        const animationInterval = setInterval(createFloatingText, interval);
+        
+        // 初始填充30组文字
+        for(let i = 0; i < 30; i++) {
+            setTimeout(createFloatingText, i * 20);
+        }
+        
+        // 窗口大小变化时重新计算位置
+        window.addEventListener('resize', function() {
+            clearInterval(animationInterval);
+            setInterval(createFloatingText, interval);
+        });
+    </script>
+</body>
+</html>
