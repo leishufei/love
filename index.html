@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飞❤️文文</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background-color: #fff9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #e75480;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .intro {
+            text-align: center;
+            color: #e75480;
+            font-style: italic;
+            margin-bottom: 40px;
+            font-size: 1.2em;
+        }
+        .projects {
+            display: flex;
+            flex-direction: column; /* 改为竖向排列 */
+            align-items: center; /* 水平居中 */
+            gap: 30px; /* 卡片之间的垂直间距 */
+            margin-top: 30px;
+        }
+        .project-card {
+            border: 1px solid #ffcce6;
+            border-radius: 12px;
+            padding: 25px;
+            width: 80%; /* 宽度调整为百分比，更适合竖向排列 */
+            max-width: 400px; /* 限制最大宽度 */
+            text-align: center;
+            transition: transform 0.3s;
+            background-color: #fff0f5;
+        }
+        .project-card:hover {
+            transform: scale(1.03); /* 悬停缩放效果稍减弱 */
+            box-shadow: 0 6px 12px rgba(231, 84, 128, 0.25);
+        }
+        .project-card h2 {
+            color: #e75480;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .project-card p {
+            color: #d23672;
+            margin-bottom: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #e75480;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+    <h1>飞❤️文文</h1>
+    <p class="intro">独属于文文的理工男浪费</p>
+    
+    <div class="projects">
+        <!-- 表白项目 -->
+        <div class="project-card">
+            <h2><a href="./1/index.html">最真挚的表白</a></h2>
+            <p>记录着我们在一起的时间和我对文文最真挚的表白</p>
+        </div>
+        
+        <!-- 文字瀑布项目 -->
+        <div class="project-card">
+            <h2><a href="./2/index.html">文字瀑布</a></h2>
+            <p>一个绚丽的文字瀑布特效</p>
+        </div>
+    </div>
+</body>
+</html>
