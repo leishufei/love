@@ -105,12 +105,12 @@
             }
         }
         
-        // 自动开始动画（每80毫秒创建一组）
-		const interval = 80;
+        // 自动开始动画
+		const interval = 120;
         const animationInterval = setInterval(createFloatingText, interval);
         
         // 初始填充30组文字
-        for(let i = 0; i < 30; i++) {
+        for(let i = 0; i < 20; i++) {
             setTimeout(createFloatingText, i * 20);
         }
         
